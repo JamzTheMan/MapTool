@@ -20,12 +20,17 @@ public class GlobalPanel extends AbstractMacroPanel {
 		super();
 		setPanelClass("GlobalPanel");
 		addMouseListener(this);
+		System.out.println("### WTF 2 ###");
 		init();
+		System.out.println("### WTF 3 ###");
 	}
 
 	private void init() {
+		System.out.println("### WTF 2.1 ###");
 		List<MacroButtonProperties> properties = MacroButtonPrefs.getButtonProperties();
+		System.out.println("### WTF 2.2 ###");
 		addArea(properties, "");
+		System.out.println("### WTF 2.3 ###");
 	}
 
 	public void reset() {

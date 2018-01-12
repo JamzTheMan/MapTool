@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 import net.rptools.maptool.client.ui.MapToolFrame;
@@ -27,6 +28,11 @@ public class DesktopLauncher extends JFrame {
 		cfg.title = MapToolGame.TITLE;
 		cfg.width = MapToolGame.SCREEN_WIDTH;
 		cfg.height = MapToolGame.SCREEN_HEIGHT;
+		cfg.useGL30 = true;
+		cfg.useHDPI = true;
+		cfg.allowSoftwareMode = true;
+		cfg.resizable = true;
+		
 		mapToolFrame = clientFrame;
 
 		// setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

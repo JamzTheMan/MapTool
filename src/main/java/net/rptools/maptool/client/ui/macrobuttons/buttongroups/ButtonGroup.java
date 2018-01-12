@@ -65,6 +65,7 @@ public class ButtonGroup extends AbstractButtonGroup {
 			Collections.sort(propertiesList);
 			for (MacroButtonProperties prop : propertiesList) {
 				if (panelClass.equals("GlobalPanel") || panelClass.equals("CampaignPanel")) {
+					System.out.println(prop.toString());
 					add(new MacroButton(prop, this));
 				} else if (panelClass.equals("ImpersonatePanel") || panelClass.equals("SelectionPanel")) {
 					add(new MacroButton(prop, this, getToken()));

@@ -44,9 +44,10 @@ public class AppUpdate {
 			DOWNLOAD_EXTENSION = ".pkg"; // Better default than .dmg?
 
 		// Attempt to get current commit out of JAR Manifest, if null is return, most likely ran from IDE/non-JAR version so skip
-		URLClassLoader cl = (URLClassLoader) MapTool.class.getClassLoader();
 		try {
-			URL url = cl.findResource("META-INF/MANIFEST.MF");
+			ClassLoader cl = MapTool.class.getClassLoader();
+			URL url = cl.getResource("META-INF/MANIFEST.MF");
+			// URL url = cl.findResource("META-INF/MANIFEST.MF");
 			Manifest manifest = new Manifest(url.openStream());
 
 			Attributes attr = manifest.getMainAttributes();
@@ -54,6 +55,8 @@ public class AppUpdate {
 			log.info("Git-Commit-SHA from Manifest: " + jarCommit);
 		} catch (IOException e) {
 			log.error("No Git-Commit-SHA attribute found in MANIFEST.MF, skip looking for updates...", e);
+		} catch (Exception e) {
+			log.error("Error getting manifest info...", e);
 		}
 
 		// If we don't have a commit attribute from JAR, we're done!

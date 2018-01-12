@@ -89,7 +89,10 @@ public class AreaGroup extends AbstractButtonGroup {
 				groupList.add(prop);
 			}
 			if (!groupList.isEmpty()) {
-				add(new ButtonGroup(groupList, lastGroup, getPanel(), getTokenId(), this));
+				AbstractMacroPanel test = getPanel();
+				GUID test2 = getTokenId();
+				ButtonGroup test3 = new ButtonGroup(groupList, lastGroup, test, test2, this);
+				add(test3);
 				groupList.clear();
 			}
 		}

@@ -35,6 +35,10 @@ public class MapToolGame extends Game {
 	private MapToolFrame mapToolFrame;
 	public DesktopLauncher launcher;
 
+	public MapToolGame(DesktopLauncher desktopLauncher) {
+		launcher = desktopLauncher;
+	}
+	
 	public MapToolGame(MapToolFrame parentFrame, DesktopLauncher desktopLauncher) {
 		mapToolFrame = parentFrame;
 		launcher = desktopLauncher;

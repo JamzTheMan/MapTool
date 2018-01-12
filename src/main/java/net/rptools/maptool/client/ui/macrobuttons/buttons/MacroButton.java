@@ -30,6 +30,9 @@ import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.rptools.lib.swing.SwingUtil;
 import net.rptools.maptool.client.MapTool;
 import net.rptools.maptool.client.MapToolUtil;
@@ -50,6 +53,8 @@ import net.rptools.maptool.model.Zone;
  * These buttons are used in Macro Button Panel in the UI.
  */
 public class MacroButton extends JButton implements MouseListener {
+	private static final Logger log = LogManager.getLogger(MacroButton.class);
+
 	private final MacroButtonProperties properties;
 	private final MacroButtonHotKeyManager hotKeyManager;
 	private final ButtonGroup buttonGroup;
@@ -82,7 +87,9 @@ public class MacroButton extends JButton implements MouseListener {
 		this.properties.setButton(this);
 		// we have to call setColor() and setText() here since properties only hold "dumb" data.
 		setColor(properties.getColorKey());
-		setText(getButtonText());
+		String text = getButtonText();
+		log.info("Button Text=" + text);
+		setText(text);
 		hotKeyManager = new MacroButtonHotKeyManager(this);
 		hotKeyManager.assignKeyStroke(properties.getHotKey());
 		setMargin(buttonInsets);

@@ -284,9 +284,9 @@ public class MapToolFrame extends DefaultDockableHolder implements WindowListene
 	public MapToolFrame(JMenuBar menuBar) {
 		// Set up the frame
 		super(AppConstants.APP_NAME);
-
+		log.info("*** HERE 2.4.1 ***");
 		this.menuBar = menuBar;
-
+		log.info("*** HERE 2.4.2 ***");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		addWindowListener(this);
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -302,7 +302,7 @@ public class MapToolFrame extends DefaultDockableHolder implements WindowListene
 		}
 		// Notify duration
 		initializeNotifyDuration();
-
+		log.info("*** HERE 2.4.3 ***");
 		// Components
 		glassPane = new GlassPane();
 		assetPanel = createAssetPanel();
@@ -315,7 +315,7 @@ public class MapToolFrame extends DefaultDockableHolder implements WindowListene
 		colorPicker = new ColorPicker(this);
 		textureChooserPanel = new TextureChooserPanel(colorPicker.getPaintChooser(), assetPanel.getModel(), "imageExplorerTextureChooser");
 		colorPicker.getPaintChooser().addPaintChooser(textureChooserPanel);
-
+		log.info("*** HERE 2.4.4 ***");
 		String credits = "";
 		String version = "";
 		Image logo = null;

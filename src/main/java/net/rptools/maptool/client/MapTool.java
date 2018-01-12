@@ -650,7 +650,7 @@ public class MapTool {
 	private static void initialize() {
 		// First time
 		AppSetup.install();
-
+		log.info("*** HERE 2.1 ***");
 		// Clean up after ourselves
 		try {
 			FileUtil.delete(AppUtil.getAppHome("tmp"), 2);
@@ -659,7 +659,7 @@ public class MapTool {
 		}
 		// We'll manage our own images
 		ImageIO.setUseCache(false);
-
+		log.info("*** HERE 2.2 ***");
 		eventDispatcher = new EventDispatcher();
 		registerEvents();
 
@@ -670,7 +670,7 @@ public class MapTool {
 		} catch (IOException ioe) {
 			MapTool.showError("While initializing (configuring sound)", ioe);
 		}
-
+		log.info("*** HERE 2.3 ***");
 		assetTransferManager = new AssetTransferManager();
 		assetTransferManager.addConsumerListener(new AssetTransferHandler());
 
@@ -678,9 +678,9 @@ public class MapTool {
 		messageList = new ObservableList<TextMessage>(Collections.synchronizedList(new ArrayList<TextMessage>()));
 
 		handler = new ClientMethodHandler();
-
+		log.info("*** HERE 2.4 ***");
 		setClientFrame(new MapToolFrame(menuBar));
-
+		log.info("*** HERE 2.5 ***");
 		serverCommand = new ServerCommandClientImpl();
 
 		player = new Player("", Player.Role.GM, "");
@@ -695,7 +695,7 @@ public class MapTool {
 		ToolTipManager.sharedInstance().setInitialDelay(AppPreferences.getToolTipInitialDelay());
 		ToolTipManager.sharedInstance().setDismissDelay(AppPreferences.getToolTipDismissDelay());
 		ChatAutoSave.changeTimeout(AppPreferences.getChatAutosaveTime());
-
+		log.info("*** HERE 2.9 ***");
 		// TODO: make this more formal when we switch to mina
 		new ServerHeartBeatThread().start();
 	}
@@ -1755,14 +1755,17 @@ public class MapTool {
 		// Draw frame contents on resize
 		tk.setDynamicLayout(true);
 
+		log.info("*** HERE 1 ***");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				log.info("*** HERE 1 ***");
 				initialize();
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
+						log.info("*** HERE  ***");
 						clientFrame.setVisible(true);
 						splash.hideSplashScreen();
-
+						log.info("*** HERE 3 ***");
 						// Add a LibGDX App/window for testing
 						if (startLibGDX) {
 							SwingUtilities.invokeLater(new Runnable() {
