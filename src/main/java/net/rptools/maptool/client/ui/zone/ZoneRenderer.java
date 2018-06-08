@@ -197,6 +197,10 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 
 	// Show blocked grid lines during AStar moving, for debugging...
 	private boolean showAstarDebugging = false;
+	
+	// Store previous view to restore to, eg after GM shows ctrl+shift+space pointer
+	private double previousScale;
+	private ZonePoint previousZonePoint;
 
 	public static enum TokenMoveCompletion {
 		TRUE, FALSE, OTHER
@@ -724,10 +728,22 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 			// Our aspect ratio is shorter than server's, so fit to height
 			scale = scale * height / gmHeight;
 		}
+		
+		previousScale = getScale();
+		previousZonePoint = getCenterPoint();
+
 		setScale(scale);
 		centerOn(new ZonePoint(x, y));
 	}
 
+	public void restoreView() {
+		log.info("Restoring view: " + previousZonePoint);
+		log.info("previousScale: " + previousScale);
+		
+		centerOn(previousZonePoint);
+		setScale(previousScale);
+	}
+	
 	public void forcePlayersView() {
 		ZonePoint zp = new ScreenPoint(getWidth() / 2, getHeight() / 2).convertToZone(this);
 		MapTool.serverCommand().enforceZoneView(getZone().getId(), zp.x, zp.y, getScale(), getWidth(), getHeight());
@@ -3818,8 +3834,6 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 			if (token.isSnapToGrid() && zone.getGrid().getCapabilities().isSnapToGridSupported()) {
 				if (zone.getGrid().getCapabilities().isPathingSupported()) {
 					CellPoint tokenPoint = zone.getGrid().convert(new ZonePoint(token.getX(), token.getY()));
-
-					log.info("SelectionSet is creating a new walker.");
 
 					walker = zone.getGrid().createZoneWalker();
 					walker.setFootprint(token.getFootprint(zone.getGrid()));

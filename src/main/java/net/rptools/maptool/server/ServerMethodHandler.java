@@ -79,6 +79,9 @@ public class ServerMethodHandler extends AbstractMethodHandler implements Server
 			case enforceZoneView:
 				enforceZoneView(context.getGUID(0), context.getInt(1), context.getInt(2), context.getDouble(3), context.getInt(4), context.getInt(5));
 				break;
+			case restoreZoneView:
+				restoreZoneView(context.getGUID(0));
+				break;
 			case exposeFoW:
 				exposeFoW(context.getGUID(0), (Area) context.get(1), (Set<GUID>) context.get(2));
 				break;
@@ -316,6 +319,10 @@ public class ServerMethodHandler extends AbstractMethodHandler implements Server
 		forwardToClients();
 	}
 
+	public void restoreZoneView(GUID zoneGUID) {
+		forwardToClients();
+	}
+	
 	public void exposeFoW(GUID zoneGUID, Area area, Set<GUID> selectedToks) {
 		Zone zone = server.getCampaign().getZone(zoneGUID); // this can return a zone that's not in MapToolFrame.zoneRenderList???
 		zone.exposeArea(area, selectedToks);
