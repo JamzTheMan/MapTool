@@ -87,10 +87,4 @@ public class CellPoint extends AbstractPoint {
 		g = previousCell.g;
 		distanceTraveled = previousCell.distanceTraveled;
 	}
-
-	// public void setNewG(CellPoint previousCell, double g) {
-	// this.g = previousCell.g + g;
-	// distanceTraveled = previousCell.distanceTraveled + Math.ceil(g);
-	// System.out.println("g=" + g + ", distanceTraveled=" + distanceTraveled);
-	// }
 }

@@ -126,7 +126,6 @@ public abstract class AbstractZoneWalker implements ZoneWalker {
 	 * @see net.rptools.maptool.client.walker.ZoneWalker#removeWaypoint(net.rptools.maptool.model.CellPoint)
 	 */
 	public boolean removeWaypoint(CellPoint aPoint) {
-		System.out.println("AbstractZoneWalker removeWaypoint called");
 		if (aPoint == null || partialPaths == null || partialPaths.isEmpty())
 			return false;
 
