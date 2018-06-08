@@ -12,7 +12,6 @@ import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 // import com.google.common.base.Stopwatch;
 
 import net.rptools.maptool.client.walker.WalkerMetric;
@@ -39,7 +38,7 @@ public class AStarSquareEuclideanWalker extends AbstractAStarWalker {
 
 	public AStarSquareEuclideanWalker(Zone zone, WalkerMetric metric) {
 		super(zone);
-		
+
 		this.metric = metric;
 
 		// If we exposed this list of coordinates to the user, they could define their own movement

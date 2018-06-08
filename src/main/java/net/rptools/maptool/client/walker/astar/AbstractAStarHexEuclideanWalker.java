@@ -36,7 +36,7 @@ public abstract class AbstractAStarHexEuclideanWalker extends AbstractAStarWalke
 	private double euclideanDistance(CellPoint p1, CellPoint p2) {
 		int a = p1.x - p2.x;
 		int b = p1.y - p2.y;
-		
+
 		return Math.sqrt(a * a + b * b);
 	}
 

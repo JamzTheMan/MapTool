@@ -287,7 +287,7 @@ public abstract class AbstractAStarWalker extends AbstractZoneWalker {
 				for (AStarCellPoint cell : terrainCells) {
 					if (cell.equals(neighbor)) {
 						terrainModifier += cell.terrainModifier;
-						 log.info("terrainModifier for " + cell + " = " + cell.terrainModifier);
+						log.info("terrainModifier for " + cell + " = " + cell.terrainModifier);
 					}
 				}
 			}
@@ -302,7 +302,7 @@ public abstract class AbstractAStarWalker extends AbstractZoneWalker {
 			neighbor.g = node.g + (normal_cost * terrainModifier * diagonalMultiplier);
 
 			neighbors.add(neighbor);
-			//log.info("neighbor.g: " + neighbor.getG());
+			// log.info("neighbor.g: " + neighbor.getG());
 		}
 
 		return neighbors;
@@ -375,7 +375,7 @@ public abstract class AbstractAStarWalker extends AbstractZoneWalker {
 
 		if (debugLabels == null)
 			debugLabels = new ArrayList<GUID>();
-		
+
 		Rectangle cellBounds = zone.getGrid().getBounds(node);
 		DecimalFormat f = new DecimalFormat("##.00");
 

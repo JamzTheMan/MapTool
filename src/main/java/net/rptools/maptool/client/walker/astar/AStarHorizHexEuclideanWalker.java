@@ -11,7 +11,7 @@ package net.rptools.maptool.client.walker.astar;
 import net.rptools.maptool.model.Zone;
 
 public class AStarHorizHexEuclideanWalker extends AbstractAStarHexEuclideanWalker {
-	
+
 	public AStarHorizHexEuclideanWalker(Zone zone) {
 		super(zone);
 		initNeighborMaps();

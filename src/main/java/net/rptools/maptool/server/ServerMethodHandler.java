@@ -322,7 +322,7 @@ public class ServerMethodHandler extends AbstractMethodHandler implements Server
 	public void restoreZoneView(GUID zoneGUID) {
 		forwardToClients();
 	}
-	
+
 	public void exposeFoW(GUID zoneGUID, Area area, Set<GUID> selectedToks) {
 		Zone zone = server.getCampaign().getZone(zoneGUID); // this can return a zone that's not in MapToolFrame.zoneRenderList???
 		zone.exposeArea(area, selectedToks);

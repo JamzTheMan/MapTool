@@ -1355,7 +1355,7 @@ public class PointerTool extends DefaultTool implements ZoneOverlay {
 	private class StopPointerActionListener extends AbstractAction {
 		private static final long serialVersionUID = -8508019800264211345L;
 		private boolean restoreZoneView = false;
-		
+
 		public StopPointerActionListener(boolean restore) {
 			restoreZoneView = restore;
 		}
@@ -1363,12 +1363,12 @@ public class PointerTool extends DefaultTool implements ZoneOverlay {
 		public StopPointerActionListener() {
 			restoreZoneView = false;
 		}
-		
+
 		public void actionPerformed(ActionEvent e) {
 			if (isShowingPointer) {
 				isShowingPointer = false;
 				MapTool.serverCommand().hidePointer(MapTool.getPlayer().getName());
-				
+
 				if (MapTool.getPlayer().isGM() & restoreZoneView) {
 					MapTool.serverCommand().restoreZoneView(renderer.getZone().getId());
 				}

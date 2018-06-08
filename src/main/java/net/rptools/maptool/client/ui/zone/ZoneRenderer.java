@@ -197,7 +197,7 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 
 	// Show blocked grid lines during AStar moving, for debugging...
 	private boolean showAstarDebugging = false;
-	
+
 	// Store previous view to restore to, eg after GM shows ctrl+shift+space pointer
 	private double previousScale;
 	private ZonePoint previousZonePoint;
@@ -728,7 +728,7 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 			// Our aspect ratio is shorter than server's, so fit to height
 			scale = scale * height / gmHeight;
 		}
-		
+
 		previousScale = getScale();
 		previousZonePoint = getCenterPoint();
 
@@ -739,11 +739,11 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 	public void restoreView() {
 		log.info("Restoring view: " + previousZonePoint);
 		log.info("previousScale: " + previousScale);
-		
+
 		centerOn(previousZonePoint);
 		setScale(previousScale);
 	}
-	
+
 	public void forcePlayersView() {
 		ZonePoint zp = new ScreenPoint(getWidth() / 2, getHeight() / 2).convertToZone(this);
 		MapTool.serverCommand().enforceZoneView(getZone().getId(), zp.x, zp.y, getScale(), getWidth(), getHeight());

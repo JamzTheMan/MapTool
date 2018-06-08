@@ -264,7 +264,7 @@ public class ClientMethodHandler extends AbstractMethodHandler {
 					zoneGUID = (GUID) parameters[0];
 					MapTool.getFrame().getZoneRenderer(zoneGUID).restoreView();
 					return;
-					
+
 				case draw:
 					zoneGUID = (GUID) parameters[0];
 					Pen pen = (Pen) parameters[1];
