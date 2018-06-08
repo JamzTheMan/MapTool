@@ -349,8 +349,14 @@ public abstract class Grid implements Cloneable {
 					} else {
 						HashSet<Point> cells = generateRadius(dist);
 
-						for (Point point : cells)
+						for (Point point : cells) {
 							radius.add(new Area(new Rectangle((point.x) * size, (point.y) * size, size, size)));
+
+							// Use grid shape to handle Hex's? Still lots of work to do for Hex in any case
+							// AffineTransform at = new AffineTransform();
+							// at.translate(point.x*size, point.y*size);
+							// radius.add(cellShape.createTransformedArea(at));
+						}
 
 						gridShapeCache.put(Integer.valueOf(dist), radius);
 						log.info("Adding to cache radius: " + Integer.valueOf(dist));
@@ -485,6 +491,7 @@ public abstract class Grid implements Cloneable {
 
 	private void fireGridChanged() {
 		if (zone != null) {
+			gridShapeCache.clear();
 			zone.fireModelChangeEvent(new ModelChangeEvent(this, Event.GRID_CHANGED));
 		}
 	}

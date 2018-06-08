@@ -54,7 +54,7 @@ public abstract class AbstractAStarWalker extends AbstractZoneWalker {
 	private final GeometryFactory geometryFactory = new GeometryFactory();
 	private ShapeReader shapeReader = new ShapeReader(geometryFactory);
 	private Geometry vblGeometry = null;
-	private TokenFootprint footprint;
+	private TokenFootprint footprint = new TokenFootprint();
 
 	private Map<AStarCellPoint, AStarCellPoint> checkedList = new ConcurrentHashMap<AStarCellPoint, AStarCellPoint>();
 	private long avgRetrieveTime;
