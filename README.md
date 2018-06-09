@@ -1,10 +1,10 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/o4hmpca4mert1k0i/branch/1.4.4.0?svg=true)](https://ci.appveyor.com/project/JamzTheMan/MapTool/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/o4hmpca4mert1k0i/branch/master?svg=true)](https://ci.appveyor.com/project/JamzTheMan/MapTool/branch/master)
 [![Build Status](https://travis-ci.org/JamzTheMan/MapTool.svg?branch=master)](https://travis-ci.org/JamzTheMan/MapTool)
 
 Welcome!
 =======
 
-So you're interested in adding a little Nerps to your MapTool eh?, You've come to the right place! Don't be scared, you'll find everything from the regular version of MapTool plus so much more. We've got PDF Image extraction, Hero Lab integration, Syntax Highlighting with Code Folding for macro editing, RESTful macro functions, and so much more!
+So you're interested in adding a little Nerps to your MapTool eh?, You've come to the right place! Don't be scared, you'll find everything from the regular version of MapTool plus so much more. We've got PDF Image extraction, Hero Lab integration, Syntax Highlighting with Code Folding for macro editing, RESTful macro functions, AI Pathfinding for Tokens, and so much more!
 
 If you've heard enough, grab the [latest release here!](https://github.com/JamzTheMan/MapTool/releases/latest) _Or click a direct link on the side bar to the right -->_
 
