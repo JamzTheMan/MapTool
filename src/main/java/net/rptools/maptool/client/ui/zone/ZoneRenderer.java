@@ -411,11 +411,16 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 	public void commitMoveSelectionSet(GUID keyTokenId) {
 		// TODO: Quick hack to handle updating server state
 		SelectionSet set = selectionSetMap.get(keyTokenId);
-		removeMoveSelectionSet(keyTokenId);
-		MapTool.serverCommand().stopTokenMove(getZone().getId(), keyTokenId);
+
 		if (set == null) {
 			return;
 		}
+
+		// Let the last thread finish rendering the path if A* Pathfinding is on
+		set.renderFinalPath();
+
+		removeMoveSelectionSet(keyTokenId);
+		MapTool.serverCommand().stopTokenMove(getZone().getId(), keyTokenId);
 		Token keyToken = zone.getToken(keyTokenId);
 		boolean vblTokenMoved = false; // If any token has VBL we need to reset FoW
 
@@ -3822,7 +3827,7 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 		private int offsetY;
 		// private boolean restrictMovement = true;
 		private RenderPathWorker renderPathTask;
-		private ExecutorService threadPool = Executors.newSingleThreadExecutor();
+		private ExecutorService renderPathThreadPool = Executors.newSingleThreadExecutor();
 
 		public SelectionSet(String playerId, GUID tokenGUID, Set<GUID> selectionList) {
 			selectionSet.addAll(selectionList);
@@ -3866,6 +3871,24 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 			return selectionSet.contains(token.getId());
 		}
 
+		// This is called when movement is committed/done. It'll let the last thread either finish or timeout
+		public void renderFinalPath() {
+			if (ZoneRenderer.this.zone.getGrid().getCapabilities().isPathingSupported() && token.isSnapToGrid()) {
+
+				if (renderPathTask != null) {
+					while (!renderPathTask.isDone()) {
+						log.debug("Waiting on Path Rendering... ");
+
+						try {
+							Thread.sleep(10);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
+
 		public void setOffset(int x, int y) {
 			offsetX = x;
 			offsetY = y;
@@ -3881,7 +3904,7 @@ public class ZoneRenderer extends JComponent implements DropTargetListener, Comp
 				}
 
 				renderPathTask = new RenderPathWorker(walker, point, AppPreferences.isUsingAstarPathfinding(), ZoneRenderer.this);
-				threadPool.execute(renderPathTask);
+				renderPathThreadPool.execute(renderPathTask);
 			} else {
 				if (gridlessPath.getCellPath().size() > 1) {
 					gridlessPath.replaceLastPoint(zp);

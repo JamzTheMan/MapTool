@@ -287,7 +287,7 @@ public abstract class AbstractAStarWalker extends AbstractZoneWalker {
 				for (AStarCellPoint cell : terrainCells) {
 					if (cell.equals(neighbor)) {
 						terrainModifier += cell.terrainModifier;
-						log.info("terrainModifier for " + cell + " = " + cell.terrainModifier);
+						// log.info("terrainModifier for " + cell + " = " + cell.terrainModifier);
 					}
 				}
 			}
