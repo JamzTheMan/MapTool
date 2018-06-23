@@ -35,7 +35,7 @@ public abstract class AbstractAStarHexEuclideanWalker extends AbstractAStarWalke
 		int bq = goal.x;
 		int ar = current.y;
 		int br = goal.y;
-		
+
 		// break ties to prefer better looking paths that are along the straight line from the starting point to the goal
 		int crossProductTieBreaker = Math.abs((aq - bq) * crossY - crossX * (ar - br));
 		double heuristic = ((Math.abs(aq - bq) + Math.abs(aq + ar - bq - br) + Math.abs(ar - br)) / 2) + crossProductTieBreaker * 0.001;

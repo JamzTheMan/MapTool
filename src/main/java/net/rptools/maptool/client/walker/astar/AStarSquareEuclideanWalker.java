@@ -104,7 +104,7 @@ public class AStarSquareEuclideanWalker extends AbstractAStarWalker {
 		} else {
 			crossProductTieBreaker = Math.abs(xDist * crossY + crossX * yDist);
 		}
-		
+
 		return distance += crossProductTieBreaker * 0.001;
 	}
 
