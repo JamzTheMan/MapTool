@@ -1,2 +1,2 @@
 theme: jekyll-theme-architect
-site.show_downloads: false
+site.show_downloads: true
