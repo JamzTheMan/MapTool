@@ -39,11 +39,9 @@ deploy:
     force_update: false
     on:
       APPVEYOR_REPO_TAG: true
-notifications:
-  - provider: Webhook
-    on_build_success: 
-      - ps: Invoke-RestMethod $env:APPVEYOR_DISCORD_WEBHOOK_SCRIPT_URL -o send.ps1
-      - ps: ./send.ps1 success $env:DISCORD_URL
-    on_build_failure: 
-      - ps: Invoke-RestMethod $env:APPVEYOR_DISCORD_WEBHOOK_SCRIPT_URL -o send.ps1
-      - ps: ./send.ps1 failure $env:DISCORD_URL
+  on_success:
+    - ps: Invoke-RestMethod $env:APPVEYOR_DISCORD_WEBHOOK_SCRIPT_URL -o send.ps1
+    - ps: ./send.ps1 success $env:DISCORD_URL
+  on_failure:
+    - ps: Invoke-RestMethod $env:APPVEYOR_DISCORD_WEBHOOK_SCRIPT_URL -o send.ps1
+    - ps: ./send.ps1 failure $env:DISCORD_URL
