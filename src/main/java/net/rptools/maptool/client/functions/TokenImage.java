@@ -100,7 +100,7 @@ public class TokenImage extends AbstractFunction {
 			float newOpacity = token.setTokenOpacity(Float.parseFloat(args.get(0).toString()));
 			zone.putToken(token);
 			MapTool.serverCommand().putToken(zone.getId(), token);
-			return newOpacity; 
+			return newOpacity;
 		}
 
 		if (functionName.equals("getTokenOpacity")) {
