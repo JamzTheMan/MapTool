@@ -16,16 +16,16 @@ install:
   - sh: tar zxf jdk-10.0.2_linux-x64_bin.tar.gz
   - sh: export JAVA_HOME=$(pwd)/jdk-10.0.2
   - sh: echo java home is $JAVA_HOME
+  - sh: export PATH=$JAVA_HOME/bin:$PATH
   - sh: echo $PATH
   - sh: cd ../maptool
-  - sh: $JAVA_HOME/bin/javapackager
   - sh: sudo apt install -y fakeroot
   - ./gradlew -version
+  - java -version
 build_script:
   - ./gradlew build -x test
 after_build:
   - ps: if($env:APPVEYOR_REPO_TAG -eq 'True') { ./gradlew deploy } else { echo "Not creating deploy artifacts because this is not a tag build" }
-  - sh: ./gradlew deploy --info
 artifacts:
   - path: build\libs\MapTool-*.jar
     name: MapTool-Jar
