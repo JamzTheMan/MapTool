@@ -8,7 +8,7 @@ So you're interested in adding a little Nerps to your MapTool eh?, You've come t
 
 If you've heard enough, grab the [latest release here!](https://github.com/JamzTheMan/MapTool/releases/latest) _Or click a direct link on the side bar to the right -->_
 
-*Note: Please read the [these release notes here](https://github.com/JamzTheMan/MapTool/releases/tag/1.4.5.4) if you plan on using the JAR version!
+*Note: Please read the [release notes here](https://github.com/JamzTheMan/MapTool/releases/tag/1.4.5.4) if you plan on using the JAR version!
 
 So, what's with the Infused with Nerps?
 -----
