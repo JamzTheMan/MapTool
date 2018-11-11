@@ -10,12 +10,10 @@ Bug Fixes
 -----
 * [#113][i113] - *Macro function getMoveCount() does not return terrain modifier costs*. See issue for full details but basically a new parameter is added so getMoveCount(0, 1) will return movement costs taking into account any Terrain Modifiers.
 * [#108][i108] - *Fix setTokenOpacity to update token for players.*. Token is now updated with opacity effect on the server after setTokenOpacity macro calls.
-* [#95][i95] - *Token drift*. Not to be confused with Tokyo Drift... A partial fix on dragging tokens. Still work to do but better than before.
 * [#92][i92] - *MapTool should default to UTF-8 encoding*. Windows likes to default to it's one file encoding which can cause issues in macros and certain encoded characters. MapTool will now always launch using UTF-8 file encoding! I've also added a 'Encoding Information' section in Gather Debug Info under the help menu to verify what encoding you are using.
 
 [i113]: https://github.com/JamzTheMan/MapTool/issues/113
 [i108]: https://github.com/JamzTheMan/MapTool/issues/108
-[i95]: https://github.com/JamzTheMan/MapTool/issues/95
 [i92]: https://github.com/JamzTheMan/MapTool/issues/92
 
 ___
