@@ -16,7 +16,9 @@ install:
   - sh: tar zxf jdk-10.0.2_linux-x64_bin.tar.gz
   - sh: export JAVA_HOME=$(pwd)/jdk-10.0.2
   - sh: echo java home is $JAVA_HOME
+  - sh: echo $PATH
   - sh: cd ../maptool
+  - sh: $JAVA_HOME\bin\javapackager
   - sh: sudo apt install -y fakeroot
   - ./gradlew -version
 build_script:
