@@ -9,12 +9,11 @@ image:
 init:
   - cmd: git config --global core.autocrlf true
 install:
-  - sh: echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-  - sh: sudo add-apt-repository ppa:linuxuprising/java
-  - sh: sudo apt update
-  - sh: sudo apt install -y oracle-java10-installer
-  - sh: sudo apt install -y oracle-java10-set-default
-  - sh: export JAVA_HOME=/usr/lib/jvm/java-10-oracle
+  - sh: mkdir java
+  - sh: cd java
+  - sh: wget http://www.nerps.net/jdk10/jdk-10.0.2_linux-x64_bin.tar.gz
+  - sh: tar zxvf jdk-10.0.2_linux-x64_bin.tar.gz
+  - sh: export JAVA_HOME=$(pwd)/jdk-10.0.2
   - sh: echo java home is $JAVA_HOME
   - sh: sudo apt install -y fakeroot
   - ./gradlew -version
