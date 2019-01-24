@@ -13,9 +13,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.math.BigDecimal;
 import java.util.List;
-
-import net.rptools.maptool.client.AppPreferences;
-import net.rptools.maptool.client.MapTool;
 import net.rptools.maptool.language.I18N;
 import net.rptools.parser.Parser;
 import net.rptools.parser.ParserException;
@@ -44,12 +41,6 @@ public class ExportDataFunctions extends AbstractFunction {
 
 	@Override
 	public Object childEvaluate(Parser parser, String functionName, List<Object> parameters) throws ParserException {
-		if (!MapTool.getParser().isMacroPathTrusted())
-			throw new ParserException(I18N.getText("macro.function.general.noPerm", functionName));
-		
-		if (!AppPreferences.getAllowExternalMacroAccess())
-			throw new ParserException(I18N.getText("macro.function.general.accessDenied", functionName));
-		
 		// New function to save data to an external file.
 		if (functionName.equals("exportData")) {
 			if (parameters.size() != 3)
@@ -76,7 +67,7 @@ public class ExportDataFunctions extends AbstractFunction {
 
 				bw.close();
 			} catch (Exception e) {
-				System.out.println("Error in exportData during file write!");
+				System.out.println("Jamz: Error in exportData during file write!");
 				e.printStackTrace();
 				return BigDecimal.ZERO;
 			}

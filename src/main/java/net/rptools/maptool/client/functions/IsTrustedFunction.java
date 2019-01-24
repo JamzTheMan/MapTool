@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import net.rptools.maptool.client.AppPreferences;
 import net.rptools.maptool.client.MapTool;
 import net.rptools.maptool.model.Player;
 import net.rptools.parser.Parser;
@@ -24,7 +23,7 @@ public class IsTrustedFunction extends AbstractFunction {
 	private static final IsTrustedFunction instance = new IsTrustedFunction();
 
 	private IsTrustedFunction() {
-		super(0, 1, "isTrusted", "isGM", "isExternalMacroAccessAllowed");
+		super(0, 1, "isTrusted", "isGM");
 	}
 
 	public static IsTrustedFunction getInstance() {
@@ -36,8 +35,6 @@ public class IsTrustedFunction extends AbstractFunction {
 			List<Object> parameters) throws ParserException {
 		if (functionName.equals("isTrusted")) {
 			return MapTool.getParser().isMacroTrusted() ? BigDecimal.ONE : BigDecimal.ZERO;
-		} else if (functionName.equals("isEnabled")) {
-			return AppPreferences.getAllowExternalMacroAccess() ? BigDecimal.ONE : BigDecimal.ZERO;
 		} else {
 			// functionName is isGM
 			if (parameters.isEmpty())
