@@ -10,4 +10,4 @@ It will default install to the same location but will use a different cache in y
 
 The links to the right will now point to RPTools for convenience but older versions of my fork will remain available [here](https://github.com/JamzTheMan/MapTool/releases). 
 
-*Note: The sendURL and getRequest functions were renamed and replaced with better [RESTful versions](http://lmwcs.com/rptools/wiki/Category:RESTful_Function). This will be the change required from using my fork. 
+*Note: The sendURL and getRequest functions were renamed and replaced with better [RESTful versions](http://lmwcs.com/rptools/wiki/Category:RESTful_Function). In 1.5+ you will also need to enable these functions via the Preferences menu. This will be the only change required if you are moving from my fork. 
