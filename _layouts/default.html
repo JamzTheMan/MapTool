@@ -20,7 +20,7 @@
     <header>
       <div class="inner">
         <a href="{{ '/' | absolute_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }} <small>{{ site.github.latest_release.tag_name }}</small></h1>
+          <h1>{{ site.title | default: site.github.repository_name }} <small>1.5.0</small></h1>
         </a>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
         {% if site.github.is_project_page %}
@@ -39,25 +39,25 @@
         </section>
 
         <aside id="sidebar">
-          <a href="{{ site.github.releases_url }}/latest" class="button">
+          <a href="https://github.com/RPTools/maptool/releases/latest" class="button">
               Changelog
             </a>
-            <a href="{{ site.github.releases_url }}/download/{{ site.github.latest_release.tag_name }}/MapTool-{{ site.github.latest_release.tag_name }}.exe" class="button"
+            <a href="https://github.com/RPTools/maptool/releases/download/1.5.0/MapTool-1.5.0.exe" class="button"
                style="background: transparent url(../assets/images/download-button-windows.png) 0 0 no-repeat; padding-left: 75px;">
               <small>Windows</small>
               .exe
             </a>
-            <a href="{{ site.github.releases_url }}/download/{{ site.github.latest_release.tag_name }}/MapTool-{{ site.github.latest_release.tag_name }}.pkg" class="button"
+            <a href="https://github.com/RPTools/maptool/releases/download/1.5.0/MapTool-1.5.0.pkg" class="button"
                style="background: transparent url(../assets/images/download-button-macos.png) 0 0 no-repeat; padding-left: 75px;">
               <small>MacOS</small>
               .pkg
             </a>
-            <a href="{{ site.github.releases_url }}/download/{{ site.github.latest_release.tag_name }}/MapTool-{{ site.github.latest_release.tag_name }}.deb" class="button"
+            <a href="https://github.com/RPTools/maptool/releases/download/1.5.0/MapTool-1.5.0.deb" class="button"
                style="background: transparent url(../assets/images/download-button-linux.png) 0 0 no-repeat; padding-left: 75px;">
               <small>Linux</small>
               .deb
             </a>
-            <a href="{{ site.github.releases_url }}/download/{{ site.github.latest_release.tag_name }}/MapTool-{{ site.github.latest_release.tag_name }}.jar" class="button"
+            <a href="https://github.com/RPTools/maptool/releases/download/1.5.0/MapTool-1.5.0.jar" class="button"
                style="background: transparent url(../assets/images/download-button-jar.png) 0 0 no-repeat; padding-left: 75px;">
               <small>Java Archive</small>
               .jar
@@ -71,7 +71,7 @@
             </a>
           
           {% if site.github.is_project_page %}
-            <p class="repo-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
+            <p class="repo-owner"><a href="{{ site.github.repository_url }}">{JamzTheMan/{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
           {% endif %}
         </aside>
       </div>
