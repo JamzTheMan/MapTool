@@ -4,7 +4,9 @@
 Welcome!
 =======
 
-This fork is now *deprecated*. Everything has now been rolled back into the main repository at [RPTools!](https://github.com/RPTools/maptool) In addition many changes were added by myself and other developers and we released version 1.5.0. Your campaign will still load and is compatible with this new version.
+This fork is now *deprecated*. Everything has now been rolled back into the main repository at [RPTools!](https://github.com/RPTools/maptool) In addition many changes were added by myself and other developers and we released version 1.5.0. Your campaign will still load and is compatible with this new version. 
+
+It will default install to the same location but will use a different cache in your user directory (.maptool-rptools vs .maptool-Nerps), you can rename/copy your old cache to the new to retain your settings/cache safely or you can keep both or delete the Nerps version. I recommend you simply Uninstall your current Nerps version completely and start with a fresh install of the RPTools version.
 
 The links to the right will now point to RPTools for convenience but older versions of my fork will remain available [here](https://github.com/JamzTheMan/MapTool/releases). 
 
