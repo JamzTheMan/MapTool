@@ -47,7 +47,7 @@ jobs:
       # For debugging purposes...
     - name: zip up macOS app dir
       if: matrix.os == 'macOS-latest'
-      run: cd releases/MapTool.app; zip -r ../MapTool.zip .
+      run: cd releases/MapTool*.app; zip -r ../MapTool.zip .
       # For debugging purposes...
     - name: List releases
       run: ls releases
@@ -65,7 +65,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/MapTool-${{ github.event.release.tag_name }}.exe
+        asset_path: releases/MapTool-*${{ github.event.release.tag_name }}.exe
         asset_name: MapTool-${{ github.event.release.tag_name }}.exe
         asset_content_type: application/octet-stream
     - name: Upload Windows MSI Release Asset
@@ -76,7 +76,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/MapTool-${{ github.event.release.tag_name }}.msi
+        asset_path: releases/MapTool-*${{ github.event.release.tag_name }}.msi
         asset_name: MapTool-${{ github.event.release.tag_name }}.msi
         asset_content_type: application/octet-stream
     - name: Upload Uber Jar Release Asset
@@ -87,7 +87,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/MapTool-${{ github.event.release.tag_name }}.jar
+        asset_path: releases/MapTool-*{{ github.event.release.tag_name }}.jar
         asset_name: MapTool-${{ github.event.release.tag_name }}.jar
         asset_content_type: application/octet-stream
       #       __     _                    
@@ -104,7 +104,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/maptool-${{ github.event.release.tag_name }}-1.x86_64.rpm
+        asset_path: releases/maptool-*${{ github.event.release.tag_name }}-1.x86_64.rpm
         asset_name: maptool-${{ github.event.release.tag_name }}-x86_64.rpm
         asset_content_type: application/octet-stream
     - name: Upload Linux DEB Release Asset
@@ -115,7 +115,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/maptool_${{ github.event.release.tag_name }}-1_amd64.deb
+        asset_path: releases/maptool_*${{ github.event.release.tag_name }}-1_amd64.deb
         asset_name: maptool_${{ github.event.release.tag_name }}-amd64.deb
         asset_content_type: application/octet-stream
       #                               ____  _____
@@ -132,7 +132,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/MapTool-${{ github.event.release.tag_name }}.dmg
+        asset_path: releases/MapTool-*${{ github.event.release.tag_name }}.dmg
         asset_name: MapTool-${{ github.event.release.tag_name }}.dmg
         asset_content_type: application/octet-stream
     - name: Upload Mac PKG Release Asset
@@ -143,7 +143,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/MapTool-${{ github.event.release.tag_name }}.pkg
+        asset_path: releases/MapTool-*${{ github.event.release.tag_name }}.pkg
         asset_name: MapTool-${{ github.event.release.tag_name }}.pkg
         asset_content_type: application/octet-stream
     - name: Upload Mac App Release Asset
@@ -155,5 +155,5 @@ jobs:
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: releases/MapTool.zip
-        asset_name: MapTool-${{ github.event.release.tag_name }}.app.zip
+        asset_name: MapTool-*${{ github.event.release.tag_name }}.app.zip
         asset_content_type: application/octet-stream
