@@ -173,8 +173,8 @@ public class TwoToneTextPane extends JTextPane {
     } catch (BadLocationException e) {
       e.printStackTrace();
       throw new IllegalStateException(
-          "This should not happen since I always use the document to "
-              + "determine the location to write. It might be due to synchronization problems though");
+          "This should not happen since I always use the document to determine the location to"
+              + " write. It might be due to synchronization problems though");
     }
   }
 

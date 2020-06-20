@@ -164,7 +164,8 @@ public class ConnectToServerDialog extends AbeillePanel<ConnectToServerDialogPre
                 if (SwingUtilities.isLeftMouseButton(e) && e.getClickCount() == 2) {
                   handleOK();
                 }
-              };
+              }
+              ;
             });
   }
 
@@ -218,7 +219,8 @@ public class ConnectToServerDialog extends AbeillePanel<ConnectToServerDialogPre
                       .setText(rem.getModel().getValueAt(rem.getSelectedRow(), 0).toString());
                   if (e.getClickCount() == 2) handleOK();
                 }
-              };
+              }
+              ;
             });
   }
 

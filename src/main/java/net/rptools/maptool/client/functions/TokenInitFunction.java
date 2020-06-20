@@ -44,7 +44,8 @@ public class TokenInitFunction extends AbstractFunction {
   /** @return singleton instance */
   public static TokenInitFunction getInstance() {
     return singletonInstance;
-  };
+  }
+  ;
 
   @Override
   public Object childEvaluate(Parser parser, String functionName, List<Object> args)

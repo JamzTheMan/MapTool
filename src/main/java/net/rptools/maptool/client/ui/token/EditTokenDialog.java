@@ -1411,7 +1411,8 @@ public class EditTokenDialog extends AbeillePanel<Token> {
               if (heroLabData != null) {
                 refreshDataButton.setIcon(REFRESH_ICON_OFF);
                 refreshDataButton.setToolTipText(
-                    "<html>Refresh data from Hero Lab<br/><b><i>No changes detected...</i></b></html>");
+                    "<html>Refresh data from Hero Lab<br/><b><i>No changes"
+                        + " detected...</i></b></html>");
 
                 ((JLabel) getComponent("portfolioLocation"))
                     .setToolTipText(heroLabData.getPortfolioPath());

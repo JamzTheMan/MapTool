@@ -59,7 +59,8 @@ public class JavascriptFunction extends AbstractFunction {
     StringBuilder sb = new StringBuilder();
 
     sb.append(
-        "(function() { rptools.scope = { parser: parser, function:  { name: functionName, rundata: rundata, result: result } }; ");
+        "(function() { rptools.scope = { parser: parser, function:  { name: functionName, rundata:"
+            + " rundata, result: result } }; ");
     sb.append("var funcresult = ").append(javascriptFunction).append('(');
 
     boolean first = true;

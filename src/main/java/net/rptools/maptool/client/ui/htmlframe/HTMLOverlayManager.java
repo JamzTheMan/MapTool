@@ -38,11 +38,13 @@ public class HTMLOverlayManager extends HTMLWebViewManager implements HTMLPanelC
 
   /** The default rule for an invisible body tag. */
   private static final String CSS_BODY =
-      "body { font-family: sans-serif; font-size: %dpt; background: none; -webkit-user-select: none; margin: 0; --pointermap:pass; overflow-x: hidden; overflow-y: hidden;}";
+      "body { font-family: sans-serif; font-size: %dpt; background: none; -webkit-user-select:"
+          + " none; margin: 0; --pointermap:pass; overflow-x: hidden; overflow-y: hidden;}";
 
   /** CSS rule: clicks on hyperlinks, buttons and input elements are not forwarded to map. */
   private static final String CSS_POINTERMAP =
-      "a {--pointermap:block;} button {--pointermap:block;} input {--pointermap:block;} area {--pointermap:block;} select {--pointermap:block}";
+      "a {--pointermap:block;} button {--pointermap:block;} input {--pointermap:block;} area"
+          + " {--pointermap:block;} select {--pointermap:block}";
 
   /** Script to return the HTML element at coordinates %d, %d. */
   private static final String SCRIPT_GET_FROM_POINT = "document.elementFromPoint(%d, %d)";

@@ -587,7 +587,8 @@ public class ImageFileImagePanelModel implements ImagePanelModel {
       // This currently throws a NPE if the frame was not finished initializing when runs. For now,
       // lets log a message and continue.
       log.warn(
-          "NullPointerException encountered while trying to update ImageFileImagePanelModel global search label",
+          "NullPointerException encountered while trying to update ImageFileImagePanelModel global"
+              + " search label",
           e);
     }
   }

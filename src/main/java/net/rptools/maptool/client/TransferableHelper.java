@@ -333,7 +333,8 @@ public class TransferableHelper extends TransferHandler {
       if (log.isDebugEnabled())
         log.debug(
             type
-                + " didn't work; trying ImageTransferableHandler().getTransferObject()"); // $NON-NLS-1$
+                + " didn't work; trying"
+                + " ImageTransferableHandler().getTransferObject()"); // $NON-NLS-1$
       image = (BufferedImage) new ImageTransferableHandler().getTransferObject(transferable);
     }
     if (image != null) {

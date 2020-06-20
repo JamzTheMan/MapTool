@@ -58,7 +58,8 @@ public class SayMacro extends AbstractMacro {
       sb.append("<td valign='top' width='46' style=\"padding-right:5px\"></td>");
     }
     sb.append(
-        "<td valign=top style=\"padding-left: 5px; margin-right: 5px; border-left: 3px solid silver\">");
+        "<td valign=top style=\"padding-left: 5px; margin-right: 5px; border-left: 3px solid"
+            + " silver\">");
     if (executionContext != null
         && MapTool.getParser().isMacroPathTrusted()
         && !MapTool.getPlayer().isGM()) {

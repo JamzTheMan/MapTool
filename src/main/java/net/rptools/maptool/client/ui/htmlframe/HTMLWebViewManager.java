@@ -201,9 +201,11 @@ public class HTMLWebViewManager {
 
   /** JS adding Mutation Observer to the document, handle new nodes with handleAddedNode. */
   private static final String SCRIPT_MUTATION_OBS =
-      "const maptool_observer = new MutationObserver(function(mutations, observer) {"
-          + "for(let mutation of mutations) {if (mutation.type === 'childList') {for (let i = 0; i < mutation.addedNodes.length; i++) {MapTool.handleAddedNode(mutation.addedNodes[i]);}}}});"
-          + "maptool_observer.observe(document.documentElement, { attributes: false, characterData: false, childList: true, subtree: true });";
+      "const maptool_observer = new MutationObserver(function(mutations, observer) {for(let"
+          + " mutation of mutations) {if (mutation.type === 'childList') {for (let i = 0; i <"
+          + " mutation.addedNodes.length; i++)"
+          + " {MapTool.handleAddedNode(mutation.addedNodes[i]);}}}});maptool_observer.observe(document.documentElement,"
+          + " { attributes: false, characterData: false, childList: true, subtree: true });";
 
   HTMLWebViewManager() {}
 
