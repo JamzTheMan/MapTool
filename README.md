@@ -1,6 +1,6 @@
 | Branch  | Status | Localization |
 | :---    | :--:  |   :--:       |
-| main    |![Build Verification](https://github.com/JamzTheMan/MapTool/workflows/Build%20Verification/badge.svg?branch=main)
+| main    |![Current Release](https://github.com/JamzTheMan/MapTool/workflows/Publish%20Assets/badge.svg?event=release)
 | develop |![Build Verification](https://github.com/JamzTheMan/MapTool/workflows/Build%20Verification/badge.svg?branch=develop) | [![Crowdin](https://badges.crowdin.net/maptool/localized.svg)](https://crowdin.com/project/maptool)|
 
 
