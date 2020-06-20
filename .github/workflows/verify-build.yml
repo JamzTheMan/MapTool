@@ -26,7 +26,7 @@ jobs:
           java-version: "14"
       - uses: axel-op/googlejavaformat-action@v3
         with:
-          args: "--dry-run --skip-sorting-imports --replace"
+          args: "--skip-sorting-imports --replace"
   build:
     needs: [formatting]
     name: ${{ matrix.os }} w/JDK ${{ matrix.java }}
